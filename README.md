@@ -24,12 +24,12 @@ Declare the directive as an element an pass it your arguments:
 
 #### Attributes
 
-1. Json
+##### 1. Json
 
 Your JSON item
 
 
-2. replaceKey (optional)
+##### 2. replaceKey (optional)
 
 This function vill be called for each key and it must return the HTML which will be used for the key. Both the key and the correspounding value are passed as argument but only the key's HTML must be returned.
 
@@ -46,7 +46,7 @@ Ex:
 ```
 
 
-3. replaceValue (optional)
+##### 3. replaceValue (optional)
 
 Same as replaceKey but for the JSON values:
 
@@ -62,11 +62,11 @@ Ex:
   }
 ```
 
-4. IndentKey
+##### 4. IndentKey
 
 Specify the keys indentation
 
-5. IndentValue
+##### 5. IndentValue
 
 Specify the values indentation, i.e. the space between the keys and values
 
