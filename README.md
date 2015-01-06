@@ -1,1 +1,1 @@
-# ng-pretty-json
+# ng-json-prettifier

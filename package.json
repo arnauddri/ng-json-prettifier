@@ -3,7 +3,10 @@
   "version": "0.0.0",
   "description": "An Angular directive to prettify your Json items",
   "main": "idst/ng-pretty-json.min.js",
-  "repository": "https://github.com/arnauddri/ng-pretty-json",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arnauddri/ng-json-prettifier"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "minify": "uglifyjs --lint false -mc -o dist/ng-json-prettifier.min.js dist/ng-json-prettifier.js",
@@ -13,12 +16,21 @@
   "keywords": [
     "json",
     "prettify",
+    "pretty",
     "ng-prettify",
-    "angular",
+    "beautifier",
+    "uglifyjs",
     "stringify",
     "angular",
     "angularjs"
   ],
   "author": "arnauddri",
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/arnauddri/ng-pretty-json/issues"
+  },
+  "homepage": "https://github.com/arnauddri/ng-pretty-json",
+  "directories": {
+    "example": "example"
+  }
 }
