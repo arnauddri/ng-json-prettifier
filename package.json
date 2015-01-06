@@ -1,8 +1,8 @@
 {
   "name": "ng-json-prettifier",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "An Angular directive to prettify your Json items",
-  "main": "dist/ng-pretty-json.min.js",
+  "main": "dist/ng-json-prettifier.min.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/arnauddri/ng-json-prettifier"

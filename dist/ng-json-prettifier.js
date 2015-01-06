@@ -22,6 +22,9 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
           indentKey: '='
         },
         link: function(scope, element, attrs) {
+          if (scope.json)
+            compileJSON(scope.json)
+
           scope.$watch(
             function() { return scope.json; },
             compileJSON
