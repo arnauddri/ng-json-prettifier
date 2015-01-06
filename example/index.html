@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html id="ng-app">
+  <!-- id="ng-app" IE<8-->
+  <head>
+    <title>Simple example</title>
+    <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="./../dist/ng-json-prettifier.min.js"></script>
+    <style>
+      html, body { height: 100%; }
+      .key { color: blue }
+      .value { color: red }
+      pre { width: 200px; margin: 40px auto; }
+    </style>
+  </head>
+  <body ng-app='myApp'>
+    <div ng-controller='MyController'>
+      <pretty-json json='json' replace-key='replaceKey' replace-value='replaceValue' indent-key='4' indent-value='indentValue'></pretty-json>
+    </div>
+    <script type="text/javascript" charset="utf-8">
+      angular.module('myApp', ['pretty.json'])
+        .controller('MyController', function($scope) {
+          $scope.json = {
+            hello: "world",
+            foo: "bar",
+            fiz: "buz"
+          };
+
+          $scope.replaceKey = function(k, v) {
+            return '<scan class=\'key\'>' + k + '</scan>'
+          }
+
+          $scope.replaceValue = function(k, v) {
+            return '<scan class=\'value\'>' + v + '</scan>'
+          }
+
+          $scope.indentValue = ' ';
+        })
+    </script>
+  </body>
+</html>
