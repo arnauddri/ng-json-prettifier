@@ -1,0 +1,30 @@
+{
+  "name": "ng-json-prettifier",
+  "version": "0.0.0",
+  "homepage": "https://github.com/arnauddri/ng-json-prettifier",
+  "authors": [
+    "Arnaud Drizard <arnaud.drizard@gmail.com>"
+  ],
+  "description": "An Angular directive to prettify your Json items",
+  "main": "dist/ng-json-prettifier.min.js",
+  "keywords": [
+    "json",
+    "prettify",
+    "ng-prettify",
+    "angular",
+    "stringify",
+    "angular",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.3.8"
+  }
+}
