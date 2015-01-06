@@ -22,18 +22,15 @@ if (typeof module !== "undefined" && typeof exports !== "undefined" && module.ex
           indentKey: '='
         },
         link: function(scope, element, attrs) {
-          if (scope.json)
-            compileJSON(scope.json)
+          var replaceKey   = scope.replaceKey || function(key, value) { return key };
+          var replaceValue = scope.replaceValue || function(key, value) { return value };
+          var indentValue  = scope.indentValue || '    ';
+          var indentKey    = scope.indentKey || 10;
 
           scope.$watch(
             function() { return scope.json; },
             compileJSON
           )
-
-          var replaceKey   = scope.replaceKey || function(key, value) { return key };
-          var replaceValue = scope.replaceValue || function(key, value) { return value };
-          var indentValue  = scope.indentValue || '    ';
-          var indentKey    = scope.indentKey || 10;
 
           function compileJSON(json) {
             if (!json || typeof json !== 'object')
