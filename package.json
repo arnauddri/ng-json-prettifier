@@ -1,6 +1,6 @@
 {
   "name": "ng-json-prettifier",
-  "version": "0.0.4",
+  "version": "0.0.5,
   "description": "An Angular directive to prettify your Json items",
   "main": "dist/ng-json-prettifier.min.js",
   "repository": {
@@ -10,8 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "minify": "uglifyjs --lint false -mc -o dist/ng-json-prettifier.min.js dist/ng-json-prettifier.js",
-    "copy": "cp src/directive.js dist/ng-json-prettifier.js",
-    "build": "npm run copy && npm run minify"
+    "cat": "cat src/directive.prefix src/directive.js src/directive.suffix > dist/ng-json-prettifier.js",
+    "build": "npm run cat && npm run minify"
   },
   "keywords": [
     "json",
