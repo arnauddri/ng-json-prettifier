@@ -2,6 +2,8 @@
 
 ng-json-prettifier is a directive to customize your json in your web page. It provides much more flexibility than angular's built-in JSON filter as you can add classes to your JSON's keys and values and control the indentation and padding.
 
+It is different from just using " | json". It let's you apply custom markup to keys/values depending upon the value of the key/value.
+
 ### Install
 
 Via npm
