@@ -8,7 +8,7 @@
     "url": "https://github.com/arnauddri/ng-json-prettifier"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "karma start --single-run --no-auto-watch",
     "minify": "uglifyjs --lint false -mc -o dist/ng-json-prettifier.min.js dist/ng-json-prettifier.js",
     "cat": "cat src/directive.prefix src/directive.js src/directive.suffix > dist/ng-json-prettifier.js",
     "build": "npm run cat && npm run minify"
