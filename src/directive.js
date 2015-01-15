@@ -29,7 +29,9 @@ angular.module('pretty.json', [])
           if (!json || typeof json !== 'object')
             return;
 
-          element.html(JSON.stringify(json, prettifyJSON, indentKey).replace(new RegExp('":', 'g'),'":' + indentValue + ''))
+          element.html(JSON.stringify(json, prettifyJSON, indentKey)
+            .replace(new RegExp('":', 'g'),'":' + indentValue + ''))
+
           $compile(element.contents())(scope);
         }
 
