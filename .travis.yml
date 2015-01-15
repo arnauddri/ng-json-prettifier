@@ -9,4 +9,4 @@ before_script:
   - bower install
 
 script:
-  - ./node_modules/karma/bin/karma start --no-auto-watch --single-run
+  - ./node_modules/karma/bin/karma start --no-auto-watch --single-run --reporters dots --browsers Firefox
