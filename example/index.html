@@ -10,7 +10,7 @@
       html, body { height: 100%; }
       .key { color: blue }
       .value { color: red }
-      pre { width: 200px; margin: 40px auto; }
+      pre { width: 400px; margin: 40px auto; }
     </style>
   </head>
   <body ng-app='myApp'>
@@ -23,7 +23,18 @@
           $scope.json = {
             hello: "world",
             foo: "bar",
-            fiz: "buz"
+            fiz: "buz",
+            int: [1,2,3,4,5,6],
+            arr: [ {
+              bruce: "wayne",
+              Peter: "Parker",
+              Clark: "Kent"
+             }, {
+              bruce: "wayne",
+              Peter: "Parker",
+              Clark: "Kent"
+             }
+            ]
           };
 
           $scope.replaceKey = function(k, v) {

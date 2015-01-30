@@ -19,7 +19,7 @@ angular.module('pretty.json', [])
         indentValue: '=',
         indentKey: '='
       },
-      link: function(scope, element, attrs) {
+      link: function(scope, element) {
         scope.$watch(
           function() { return scope.json; },
           compileJSON
@@ -34,19 +34,24 @@ angular.module('pretty.json', [])
           if (!json || typeof json !== 'object')
             return;
 
-          element.html(JSON.stringify(json, prettifyJSON, indentKey).replace(new RegExp('":', 'g'),'":' + indentValue + ''))
+          element.html(JSON.stringify(json, prettifyJSON, indentKey)
+            .replace(new RegExp('":', 'g'),'":' + indentValue + ''))
+
           $compile(element.contents())(scope);
         }
 
         function prettifyJSON(key, value) {
-          if (value && typeof value === 'object') {
+          if (value && typeof value === 'object' && !Array.isArray(value)) {
             var replacement = {};
             for (var k in value) {
-              if (Object.hasOwnProperty.call(value, k)) {
+              if (Object.hasOwnProperty.call(value, k))
                 replacement[replaceKey(k, value[k])] = value[k];
-              }
             }
             return replacement
+          } else if (Array.isArray(value)) {
+            for (var k in value) {
+              return value
+            }
           }
 
           return replaceValue(key, value);
