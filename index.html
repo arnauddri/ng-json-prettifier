@@ -7,12 +7,20 @@
 
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <style>
+      html, body { height: 100%; }
+      .key { color: blue }
+      .value { color: red }
+    </style>
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/styles/default.min.css">
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.4/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
-  <body>
+  <body ng-app='myApp'>
     <div class="wrapper">
       <header>
         <h1>Ng-json-prettifier</h1>
@@ -33,10 +41,13 @@
 
 <p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+    <div ng-controller='MyController'>
+      <pretty-json json='json' replace-key='replaceKey' replace-value='replaceValue' indent-key='4' indent-value='indentValue'></pretty-json>
+    </div>
+    <pre><code class="html">
+    test
+    </code></pre>
+
 
 <p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
@@ -66,6 +77,24 @@ $ git checkout gh-pages
       </footer>
     </div>
     <script src="javascripts/scale.fix.js"></script>
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.9/angular.min.js"></script>
+    <script src="javascripts/ng-json-prettifier.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+      angular.module('myApp', ['pretty.json'])
+        .controller('MyController', function($scope) {
+          $scope.json = {
+            hello: "world",
+            foo: "bar",
+            fiz: "buz"
+          };
+          $scope.replaceKey = function(k, v) {
+            return '<scan class=\'key\'>' + k + '</scan>'
+          }
+          $scope.replaceValue = function(k, v) {
+            return '<scan class=\'value\'>' + v + '</scan>'
+          }
+          $scope.indentValue = ' ';
+        })
+    </script>
   </body>
 </html>
